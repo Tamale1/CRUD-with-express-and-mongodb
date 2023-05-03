@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title> You serries'quotes</title>
+</head>
+<body>
+    <h1 data-position="header">The captivating quotes from YOU serries</h1>
+    <section data-position="add-quote">
+      <h2>Add quote</h2>
+    </section>
+    <form action="/quotes" method="post">
+        <input type="text" placeholder="Name" name="name">
+        <input type="text"placeholder="quote" name="quote">
+        <button type="submit">submit</button>
+    </form>
+  </section>
+  <section data-position="update-quote">
+
+
+    <div>
+        <h2>Rhys Monteroe invades!</h2>
+        <p>Replace the first Joe quote with a quote written by Rhys Moteroe</p>
+        <button id="update-button">Replace Joe's quote</button>
+      </div>
+    </section>
+
+    <section data-position="remove-quote">
+      <div>
+        <h2>Remove Rhys Monteroe!</h2>
+        <p>
+          Delete one Rhys Monteroe quote. Does nothing if there are no more Rhys Monteroe
+        quote
+        </p>
+        <button id="delete-button">Delete Rhys Monteroe's quote</button>
+        <div id="message"></div>
+      </div>
+    </section>
+<section data-position="quotes">
+<h2>Quotes</h2>
+
+<ul class="quotes">
+  <!-- Loop through quotes -->
+  <% for(let i = 0; i < quotes.length; i++) {%>
+  <li class="quote">
+    <!-- Output name from the iterated quote object -->
+    <span><%= quotes[i].name %></span>:
+    <!-- Output quote from the iterated quote object -->
+    <span><%= quotes[i].quote %></span>
+  </li>
+  <% } %>
+</ul>
+</section>
+
+
+  <script src="/main.js"></script>
+</body>
+</html>
